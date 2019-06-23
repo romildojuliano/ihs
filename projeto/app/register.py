@@ -9,8 +9,6 @@ photos_limit = 300
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
 
-pictures_confirm = True
-
 new_user = raw_input("Insira o nome do usuário a ser cadastrado: ")
 
 confirmation = raw_input("Esse é o nome desejado? " + new_user + "\n(digite sim ou nao) ")
@@ -43,7 +41,7 @@ raw_input("Pressione ENTER para continuar...")
 capture = cv2.VideoCapture(0)
 
 photos_taken = 0
-while(pictures_confirm):
+while(True):
     ret, frame = capture.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.5, minNeighbors=5)
